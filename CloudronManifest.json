@@ -1,0 +1,19 @@
+{
+    "id": "webui.ollama.cloudronapp",
+    "title": "Ollama WebUI",
+    "author": "ollama-webui",
+    "description": "file://DESCRIPTION.md",
+    "tagline": "Ollama Web UI: A User-Friendly Web Interface for Chat Interactions",
+    "version": "0.1.0",
+    "healthCheckPath": "/api/v1",
+    "httpPort": 8080,
+    "addons": {
+        "localstorage": {},
+        "postgresql": {}
+    },
+    "manifestVersion": 2,
+    "memoryLimit": 536870912,
+    "website": "https://github.com/ollama-webui/ollama-webui",
+    "minBoxVersion": "7.3.2",
+    "icon": "file://logo.png"
+}
