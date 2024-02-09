@@ -7,7 +7,7 @@ RUN git clone https://github.com/ollama-webui/ollama-webui /app/code/ollama-webu
 
 RUN npm ci && \
     npm run build && \
-    rm -rf node_modeules/.cache 
+    rm -rf node_modules/.cache 
 
 ENV ENV=prod
 ENV PORT ""
