@@ -28,6 +28,6 @@ RUN apt-get update && \
     apt-get install -y pandoc netcat-openbsd && \
     rm -rf /var/lib/apt/lists/*
 
-COPY start.sh /app/pkg
+COPY start.sh /app/pkg/
 
-CMD [ "/app/code/start.sh" ]
+CMD ["/app/pkg/start.sh"]
