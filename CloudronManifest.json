@@ -3,6 +3,7 @@
     "title": "Ollama WebUI",
     "author": "ollama-webui",
     "description": "file://DESCRIPTION.md",
+    "postInstallMessage": "file://POSTINSTALL.md",
     "tagline": "Ollama Web UI: A User-Friendly Web Interface for Chat Interactions",
     "version": "0.1.4",
     "healthCheckPath": "/api/v1",
@@ -13,6 +14,11 @@
     "manifestVersion": 2,
     "memoryLimit": 536870912,
     "website": "https://github.com/ollama-webui/ollama-webui",
-    "minBoxVersion": "7.3.2",
-    "icon": "file://logo.png"
+    "minBoxVersion": "7.5.0",
+    "icon": "file://logo.png",
+    "tags": [
+        "ai",
+        "ollama",
+        "chat"
+    ]
 }
