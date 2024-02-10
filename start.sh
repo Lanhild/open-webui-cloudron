@@ -16,8 +16,8 @@ export PORT="8080"
 export DATA_DIR="/app/data/"
 export OLLAMA_API_BASE_URL="https://example.com/api"
 
-if [[ ! -f /app/data/env ]]; then
-    cat > /app/data/env << EOF
+if [[ ! -f /app/data/.env ]]; then
+    cat > /app/data/.env << EOF
 # Add custom environment variables in this file
 WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY}
 PORT=${PORT}
@@ -31,6 +31,8 @@ OPENAI_API_KEY=
 
 EOF
 fi
+
+source /app/data/.env
 
 echo "==> Starting Ollama WebUI"
 cd /app/code/ollama-webui/backend

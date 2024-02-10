@@ -26,7 +26,7 @@ RUN pip3 install -r requirements.txt
 
 RUN apt-get update && \
     apt-get install -y pandoc netcat-openbsd && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/cache/apt /var/lib/apt/lists
 
 COPY start.sh /app/pkg/
 

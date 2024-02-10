@@ -5,7 +5,7 @@
     "description": "file://DESCRIPTION.md",
     "postInstallMessage": "file://POSTINSTALL.md",
     "tagline": "Ollama Web UI: A User-Friendly Web Interface for Chat Interactions",
-    "version": "0.1.4",
+    "version": "0.1.6",
     "healthCheckPath": "/api/v1",
     "httpPort": 8080,
     "addons": {
