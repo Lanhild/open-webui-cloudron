@@ -1,19 +1,18 @@
 #!/bin/bash
 set -eu
 
-echo "=> Creating directories"
-mkdir -p /app/data/
+echo "=> Ensure directories"
+mkdir -p /app/data/ /run/cloudron.cache
 
 if [[ ! -f /app/data/.webui_secret_key ]]; then
-    echo "==> Create WebUI secret key"
+    echo "=> Creating WebUI secret key"
     echo $(head -c 12 /dev/random | base64) > /app/data/.webui_secret_key
 fi
 
-echo "Loading WEBUI_SECRET_KEY from key file"
+echo "=> Loading configuration"
 export WEBUI_SECRET_KEY="$(cat /app/data/.webui_secret_key)"
-
 export PORT="8080"
-export DATA_DIR="/app/data/"
+export DATA_DIR="/app/data"
 export OLLAMA_API_BASE_URL="https://example.com/api"
 
 if [[ ! -f /app/data/.env ]]; then
@@ -26,14 +25,22 @@ DATA_DIR=${DATA_DIR}
 OLLAMA_API_BASE_URL=${OLLAMA_API_BASE_URL}
 
 # Optional, used to connect to OpenAI
-OPENAI_API_BASE_URL=
-OPENAI_API_KEY=
+# OPENAI_API_BASE_URL=
+# OPENAI_API_KEY=
+
+# DO NOT TRACK
+SCARF_NO_ANALYTICS=true
+DO_NOT_TRACK=true
 
 EOF
 fi
 
+# Permissions need to be fixed for file upload to work
+echo "=> Setting permissions"
+chown -R cloudron:cloudron /app/data /run/*.cache
+
 source /app/data/.env
 
-echo "==> Starting Ollama WebUI"
-cd /app/code/ollama-webui/backend
-WEBUI_SECRET_KEY="$WEBUI_SECRET_KEY" DATA_DIR="$DATA_DIR" exec uvicorn main:app --host 0.0.0.0 --port "${PORT}" --forwarded-allow-ips '*'
+echo "=> Starting Ollama WebUI"
+cd /app/code/backend
+WEBUI_SECRET_KEY="$WEBUI_SECRET_KEY" DATA_DIR="$DATA_DIR" exec gosu cloudron:cloudron uvicorn main:app --host 0.0.0.0 --port "${PORT}" --forwarded-allow-ips '*'

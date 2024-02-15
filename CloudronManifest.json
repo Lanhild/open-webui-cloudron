@@ -5,12 +5,15 @@
     "description": "file://DESCRIPTION.md",
     "postInstallMessage": "file://POSTINSTALL.md",
     "tagline": "Ollama Web UI: A User-Friendly Web Interface for Chat Interactions",
-    "version": "0.1.6",
+    "version": "0.2.2",
     "healthCheckPath": "/api/v1",
     "httpPort": 8080,
     "addons": {
         "localstorage": {}
     },
+    "runtimeDirs": [
+        "/app/code/ollama-webui"
+    ],
     "manifestVersion": 2,
     "memoryLimit": 536870912,
     "website": "https://github.com/ollama-webui/ollama-webui",
