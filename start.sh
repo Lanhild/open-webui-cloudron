@@ -41,6 +41,6 @@ chown -R cloudron:cloudron /app/data /run/*.cache
 
 source /app/data/.env
 
-echo "=> Starting Ollama WebUI"
+echo "=> Starting Open WebUI"
 cd /app/code/backend
 WEBUI_SECRET_KEY="$WEBUI_SECRET_KEY" DATA_DIR="$DATA_DIR" exec gosu cloudron:cloudron uvicorn main:app --host 0.0.0.0 --port "${PORT}" --forwarded-allow-ips '*'

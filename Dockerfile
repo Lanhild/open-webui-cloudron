@@ -3,7 +3,7 @@ FROM cloudron/base:4.2.0@sha256:46da2fffb36353ef714f97ae8e962bd2c212ca091108d768
 RUN mkdir -p /app/code
 WORKDIR /app/code
 
-RUN git clone https://github.com/ollama-webui/ollama-webui /app/code
+RUN git clone https://github.com/open-webui/open-webui /app/code
 
 RUN wget "https://chroma-onnx-models.s3.amazonaws.com/all-MiniLM-L6-v2/onnx.tar.gz" -O - | \
     tar -xzf - -C /app/code && \
