@@ -1,22 +1,24 @@
 {
-    "id": "webui.ollama.cloudronapp",
-    "title": "Ollama WebUI",
-    "author": "ollama-webui",
-    "description": "file://DESCRIPTION.md",
+    "id": "com.openwebui",
+    "title": "Open WebUI",
+    "author": "open-webui",
     "postInstallMessage": "file://POSTINSTALL.md",
-    "tagline": "Ollama Web UI: A User-Friendly Web Interface for Chat Interactions",
-    "version": "0.2.2",
+    "tagline": "ChatGPT-Style WebUI for LLMs",
+    "version": "0.2.4",
     "healthCheckPath": "/api/v1",
     "httpPort": 8080,
     "addons": {
         "localstorage": {}
     },
     "runtimeDirs": [
-        "/app/code/ollama-webui"
+        "/app/code/open-webui"
     ],
     "manifestVersion": 2,
     "memoryLimit": 536870912,
-    "website": "https://github.com/ollama-webui/ollama-webui",
+    "website": "https://openwebui.com",
+    "documentationUrl": "https://docs.cloudron.io/apps/open-webui",
+    "forumUrl": "https://forum.cloudron.io/category/174/open-webui",
+    "contactEmail": "support@cloudron.io",
     "minBoxVersion": "7.5.0",
     "icon": "file://logo.png",
     "tags": [
