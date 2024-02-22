@@ -13,6 +13,7 @@ echo "=> Loading configuration"
 export WEBUI_SECRET_KEY="$(cat /app/data/.webui_secret_key)"
 export PORT="8080"
 export DATA_DIR="/app/data"
+export UPLOAD_DIR="${DATA_DIR}/uploads"
 export OLLAMA_API_BASE_URL="https://example.com/api"
 
 if [[ ! -f /app/data/.env ]]; then
@@ -21,6 +22,7 @@ if [[ ! -f /app/data/.env ]]; then
 WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY}
 PORT=${PORT}
 DATA_DIR=${DATA_DIR}
+UPLOAD_DIR=${UPLOAD_DIR}
 # Ollama URL for the backend to connect
 OLLAMA_API_BASE_URL=${OLLAMA_API_BASE_URL}
 
@@ -43,4 +45,4 @@ source /app/data/.env
 
 echo "=> Starting Open WebUI"
 cd /app/code/backend
-WEBUI_SECRET_KEY="$WEBUI_SECRET_KEY" DATA_DIR="$DATA_DIR" exec gosu cloudron:cloudron uvicorn main:app --host 0.0.0.0 --port "${PORT}" --forwarded-allow-ips '*'
+WEBUI_SECRET_KEY="$WEBUI_SECRET_KEY" DATA_DIR="$DATA_DIR" UPLOAD_DIR="$UPLOAD_DIR" exec gosu cloudron:cloudron uvicorn main:app --host 0.0.0.0 --port "${PORT}" --forwarded-allow-ips '*'

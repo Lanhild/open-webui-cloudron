@@ -4,7 +4,7 @@
     "author": "open-webui",
     "postInstallMessage": "file://POSTINSTALL.md",
     "tagline": "ChatGPT-Style WebUI for LLMs",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "healthCheckPath": "/api/v1",
     "httpPort": 8080,
     "addons": {

@@ -30,7 +30,7 @@ ENV DO_NOT_TRACK true
 WORKDIR /app/code/backend
 
 RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu --no-cache-dir
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt --no-cache-dir
 
 RUN apt-get update && \
     apt-get install -y pandoc netcat-openbsd && \
