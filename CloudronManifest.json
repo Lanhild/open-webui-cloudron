@@ -4,15 +4,12 @@
     "author": "open-webui",
     "postInstallMessage": "file://POSTINSTALL.md",
     "tagline": "ChatGPT-Style WebUI for LLMs",
-    "version": "0.2.5",
+    "version": "0.1.0-1",
     "healthCheckPath": "/api/v1",
     "httpPort": 8080,
     "addons": {
         "localstorage": {}
     },
-    "runtimeDirs": [
-        "/app/code/open-webui"
-    ],
     "manifestVersion": 2,
     "memoryLimit": 536870912,
     "website": "https://openwebui.com",
