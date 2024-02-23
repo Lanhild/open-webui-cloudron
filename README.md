@@ -24,7 +24,4 @@ cloudron install
 ## Update checklist
 
 * [ ] Upgrade `version` in `CloudronManifest.json`
-
-## Known issues
-
-* [ ] HTTP `500` error when uploading documents [#1](https://github.com/Lanhild/open-webui-cloudron/issues/1)
+* [ ] Upgrade `VERSION` argument in `Dockerfile`
