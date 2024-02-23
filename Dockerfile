@@ -5,11 +5,6 @@ WORKDIR /app/code
 
 RUN git clone https://github.com/open-webui/open-webui /app/code
 
-RUN wget "https://chroma-onnx-models.s3.amazonaws.com/all-MiniLM-L6-v2/onnx.tar.gz" -O - | \
-    tar -xzf - -C /app/code && \
-    mkdir -p /run/cloudron.cache/chroma/onnx_models/all-MiniLM-L6-v2 && \
-    mv /app/code/onnx /run/cloudron.cache/chroma/onnx_models/all-MiniLM-L6-v2/onnx
-
 RUN npm ci && \
     npm run build && \
     rm -rf node_modules/.cache 
@@ -35,7 +30,7 @@ ENV DO_NOT_TRACK true
 WORKDIR /app/code/backend
 
 RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu --no-cache-dir
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt --no-cache-dir
 
 RUN apt-get update && \
     apt-get install -y pandoc netcat-openbsd && \

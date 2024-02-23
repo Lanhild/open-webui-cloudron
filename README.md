@@ -1,6 +1,6 @@
 # Open WebUI Cloudron App
 
-This repository contains the Cloudron app package source for [Open-WebUI](https://github.com/open-webui/open-webui)
+This repository contains the Cloudron app package source for [Open WebUI](https://github.com/open-webui/open-webui)
 
 ## Installation
 
