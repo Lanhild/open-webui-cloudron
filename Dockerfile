@@ -3,7 +3,7 @@ FROM cloudron/base:4.2.0@sha256:46da2fffb36353ef714f97ae8e962bd2c212ca091108d768
 RUN mkdir -p /app/code
 WORKDIR /app/code
 
-ARG VERSION="1.0.0-alpha.101"
+ARG VERSION="0.1.102"
 
 RUN wget https://github.com/open-webui/open-webui/archive/refs/tags/v${VERSION}.tar.gz -O - | \
     tar xz --strip-components 1 -C /app/code
